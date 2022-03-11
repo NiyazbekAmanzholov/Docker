@@ -1,3 +1,4 @@
+# https://www.youtube.com/watch?v=ck6xQqSOlpw
 # задаёт базовый (родительский) образ
 FROM openjdk:8
 # копирует в контейнер файлы и папки

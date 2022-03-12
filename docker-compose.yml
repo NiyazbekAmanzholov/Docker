@@ -1,0 +1,36 @@
+#  команды консоли на windows
+#  docker-compose up                                                     (что бы запустить файл с инструкциями)
+#  docker-compose ps                                                     (проверяем работают ли контейнеры)
+#  docker ps                                                             (Работающие контейнеры)
+#  docker-machine ip default                                             (чтобы узнать ip address запуска контейнера)
+#  docker search nginx                                                   (Поиск образа)
+#  docker pull nginx                                                     (Pull (выгрузка из реестра) образа)
+#  docker login                                                          (Вход в реестр)
+#  docker push eon01/nginx                                               (Push (загрузка в реестр) образа)
+#  docker run -it --name infinite -d eon01/infinite                      (Первый запуск контейнера)
+#  docker rename infinite infinity                                       (Переименование контейнера)
+#  docker rm infinite                                                    (Удаление контейнера)
+#  docker update --cpu-shares 512 -m 300M infinite                       (Обновление контейнера)
+#  docker start nginx                                                    (Запуск остановленного контейнера)
+#  docker stop nginx                                                     (Остановка)
+#  docker restart nginx                                                  (Перезагрузка)
+
+#  docker images                                                         (Список образов)
+#  docker build github.com/creack/docker-firefox                         (Создание образов)
+#  docker rmi nginx                                                      (Удаление образа)
+
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 6082:8080
